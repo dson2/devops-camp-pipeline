@@ -27,7 +27,7 @@ pipeline {
         stage('Application docker build') {
             steps {
                 echo "Building application image"
-                //TODO("Lab 4 - Artifact Management"): build the docker app image
+                //TODO("Lab 4 - Artifact Management"): build the docker app image 
                 withCredentials([usernameColonPassword(credentialsId: 'dson-harbor-auth', variable: 'HARBOR-AUTH')]) {
                     script {
                         sh 'docker build -t $APP_IMAGE_NAME-$COMMIT_HASH -f ./app/Dockerfile ./afs-labs-student'
